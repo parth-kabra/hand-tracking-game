@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand tracker game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+    <script>
+        socket = io();
+        socket.connect("http://127.0.0.1:8080")
+    </script>
+
+</head>
+<body>
+
+    <section class="box">
+
+        <span class="box__">
+
+            <iframe width="100%" height="99%" src="https://rossning92.github.io/t-rex/"></iframe>
+
+        </span>
+
+        <span class="box__" id = "box">
+
+            <p class="display-6 tracker__title" align="center">Tracker Console</p>
+
+            <br>
+
+            <span class="console overflow-auto" id="console"></span>
+
+            <br>
+
+            <span style="width: 100%;">
+                <p class="h3 tracker__title" id="finger__count" align="left">Finger Count: </p>
+                <hr>
+                <span id="tracker__console" style="width: 100%; display: flex; justify-content: center;"></span>
+            </span>
+
+        </span>
+
+
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
