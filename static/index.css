@@ -65,7 +65,7 @@ body{
     width: 100%;
     height: 30%;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     font-family: 'Courier New', Courier, monospace !important;
     padding: .5rem;
 }

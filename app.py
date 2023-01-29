@@ -22,7 +22,7 @@ def shareHand():
     global obj
     obj = getJson()
 
-    threading.Timer(.5, shareHand).start()
+    threading.Timer(1, shareHand).start()
 
 if __name__ == "__main__":
     shareHand()

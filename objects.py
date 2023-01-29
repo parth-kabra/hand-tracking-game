@@ -6,8 +6,12 @@ def setJson(info) -> None:
     with open("data.json", "w") as file:
         file.write(obj)
 
-def getJson() -> dict:
-    with open("data.json", "r") as file:
-        obj = json.load(file)
-    
-    return obj
+def getJson():
+    try:
+        file = open("data.json", "r")
+        data = json.loads(file.read())
+        file.close()
+        return data
+    except:
+        return {"hand":False}
+     
